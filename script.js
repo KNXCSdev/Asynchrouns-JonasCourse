@@ -148,7 +148,7 @@ const renderCountry = function (data, className = '') {
 
 // const whereAmI = function (lat, lng) {
 //   fetch(
-//     `https://geocode.xyz/${lat},${lng}?geoit=JSON&auth=581742844214136446074x3914)`
+//     `https://geocode.xyz/${lat},${lng}?geoit=JSON&auth=)`
 //   )
 //     .then(response => {
 //       if (response.ok === false)
@@ -225,7 +225,7 @@ const renderCountry = function (data, className = '') {
 //       const { latitude: lat, longitude: lng } = pos.coords;
 
 //       return fetch(
-//         `https://geocode.xyz/${lat},${lng}?geoit=JSON&auth=581742844214136446074x3914)`
+//         `https://geocode.xyz/${lat},${lng}?geoit=JSON&auth=)`
 //       );
 //     })
 //     .then(response => {
