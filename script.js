@@ -462,38 +462,36 @@ const wait = function (seconds) {
   });
 };
 
-const LoadNPause = async function () {
+const loadNPause = async function () {
   try {
-    let img = await createImage('img/img-1.jpg');
+    let imgWait = await createImage(`img/img-1.jpg`);
     await wait(2);
-    img.style.display = 'none';
-
-    img = await createImage('img/img-2.jpg');
+    imgWait.style.display = 'none';
+    imgWait = await createImage(`img/img-2.jpg`);
     await wait(2);
-    img.style.display = 'none';
-
-    img = await createImage('img/img-3.jpg');
+    imgWait.style.display = 'none';
+    imgWait = await createImage(`img/img-3.jpg`);
     await wait(2);
-    img.style.display = 'none';
+    imgWait.style.display = 'none';
   } catch (err) {
-    console.error(err.message);
+    console.error(`There was a problem with loading an image ${err.message}`);
   }
 };
 
-// LoadNPause();
+// loadNPause();
 
-//PART 2
-
-const LoadAll = async function (imgArr) {
+const loadAll = async function (imgArr) {
   try {
-    const imgs = imgArr.map(async img => await createImage(img));
+    const imgMap = imgArr.map(async img => await createImage(img));
 
-    const imgsEl = await Promise.all(imgs);
+    const imgEl = await Promise.all(imgMap);
 
-    imgsEl.forEach(img => img.classList.add('parallel'));
+    imgEl.forEach(img => {
+      img.classList.add('parallel');
+    });
   } catch (err) {
-    console.error(err.message);
+    console.error(`There was a problem with an image ${err.message}`);
   }
 };
 
-LoadAll([`img/img-1.jpg`, `img/img-2.jpg`, `img/img-3.jpg`]);
+loadAll([`img/img-1.jpg`, `img/img-2.jpg`, `img/img-3.jpg`]);
